@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AppSphere 2014 Python Agent Demo</title>
+    </head>
+    <body>
+        <h1>AppSphere 2014 Python Agent Demo</h1>
+
+        <ul>
+            <li><a href="{{ url_for('response_time_wave', whatever='abc') }}">Varying response time BT</a></li>
+            <li><a href="{{ url_for('cause_error', when='always') }}">Always error BT</a></li>
+            <li><a href="{{ url_for('cause_error', when='sometimes') }}">Sometimes error BT</a></li>
+            <li><a href="{{ url_for('query_db', dbtype='mysql') }}">MySQL Query</a></li>
+            <li><a href="{{ url_for('query_db', dbtype='pgsql') }}">PgSQL Query</a></li>
+            <li><a href="{{ url_for('http_exit_call') }}">HTTP Exit Call</a></li>
+        </ul>
+    </body>
+</html>
