@@ -39,10 +39,8 @@ env/bin/gunicorn -w 4 -b 0.0.0.0:9000 demo.app:app
 Install the agent into your virtualenv with:
 
 ```
-virtualenv env
-env/bin/pip install -r requirements.txt
-env/bin/pip install agent/appdynamics_bindeps_linux_x64_cp27m-1.0.0-cp27-none-any.whl
-env/bin/pip install agent/appdynamics-1.0.0-py2-none-any.whl
+env/bin/pip install /path/to/agent/appdynamics_bindeps_linux_x64_cp27m-1.0.0-cp27-none-any.whl
+env/bin/pip install /path/to/agent/appdynamics-1.0.0-py2-none-any.whl
 ```
 
 Run the agent with the `pyagent` command and a configuration file (there's a sample configuration file included, `appdynamics.cfg`):
