@@ -1,7 +1,14 @@
 from contextlib import closing, contextmanager
 
-from mysql import connector as mysql_connector
-import psycopg2.pool
+try:
+    from mysql import connector as mysql_connector
+except:
+    mysql_connector = None
+
+try:
+    import psycopg2.pool
+except:
+    psycopg2 = None
 
 from demo import config
 

@@ -74,7 +74,7 @@ def query_db(dbtype):
             else:
                 cur.execute("SELECT 123")
     elif dbtype == 'mysql':
-        with db.mysql():
+        with db.mysql() as cxn:
             cur = cxn.cursor()
 
             if query_type == 'slow':  # Be a slow query
