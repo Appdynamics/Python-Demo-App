@@ -46,7 +46,7 @@ env/bin/pip install /path/to/agent/appdynamics-1.0.0-py2-none-any.whl
 Run the agent with the `pyagent` command and a configuration file (there's a sample configuration file included, `appdynamics.cfg`):
 
 ```
-env/bin/pyagent -c appdynamics.cfg - env/bin/gunicorn -w 4 -b 0.0.0.0:9000 demo.app:app
+env/bin/pyagent run -c appdynamics.cfg - env/bin/gunicorn -w 4 -b 0.0.0.0:9000 demo.app:app
 ```
 
 ## Generating load
