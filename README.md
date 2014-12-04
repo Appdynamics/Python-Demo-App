@@ -11,6 +11,20 @@ A trivial Flask web app that can be used to demo performance monitoring features
 
 ## Installation
 
+Python 2.6 or 2.7 are required. MacOS X and recent Linux distributions should have these preinstalled. Older Linux distributions (like CentOS 5) may come with a version of Python is too old, but you should be able to easily find packages for Python 2.7.
+
+You must have `pip` and `virtualenv` installed. These may already be installed for you. If not, install `pip` with:
+
+```
+sudo easy_install pip
+```
+
+And then use `pip` to install `virtualenv`:
+
+```
+sudo pip install virtualenv
+```
+
 Create a virtualenv:
 
 ```
@@ -36,14 +50,19 @@ env/bin/gunicorn -w 4 -b 0.0.0.0:9000 demo.app:app
 
 ## Running with the agent
 
-Install the agent into your virtualenv with:
+If your version of pip is older than 1.5, upgrade pip with:
 
 ```
-env/bin/pip install /path/to/agent/appdynamics_bindeps_linux_x64_cp27m-1.0.0-cp27-none-any.whl
-env/bin/pip install /path/to/agent/appdynamics-1.0.0-py2-none-any.whl
+pip install -U pip
 ```
 
-Run the agent with the `pyagent` command and a configuration file (there's a sample configuration file included, `appdynamics.cfg`):
+Then install the agent into your virtualenv:
+
+```
+env/bin/pip install /path/to/agent/appdynamics-4.0.0.0-py2-none-any.whl
+```
+
+Run the agent with the `pyagent` command and a configuration file (there's a sample configuration file included in this repository, `appdynamics.cfg`):
 
 ```
 env/bin/pyagent run -c appdynamics.cfg - env/bin/gunicorn -w 4 -b 0.0.0.0:9000 demo.app:app
@@ -57,3 +76,6 @@ Install siege through your package manager (`yum install siege` on Red Hat, `apt
 siege -d 1 -f siege.txt
 ```
 
+## HTTP Exit Call / Distributed Correlation Testing
+
+The AppDynamics Python agent supports distributed correlation across tiers. The agent supports both being the originating tier and the continuing tier. To demonstrate this and test it out, you can use the `/http` endpoint to cause an HTTP exit call with a correlation header. This is useful for testing cross-tier correlation (as of 4.0.0, the Python agent does not support cross-app correlation). For example, if you have a .NET instrumented tier at 192.168.0.1, you can cause correlation by going to `http://127.0.0.1/http?url=http://192.168.0.1/`.
