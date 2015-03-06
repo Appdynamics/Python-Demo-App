@@ -9,6 +9,8 @@ A trivial Flask web app that can be used to demo performance monitoring features
 4. Make external HTTP calls.
 5. Return HTTP errors (5xx and 4xx).
 
+NOTE: To use the AppDynamics Python Agent, you must have a compatible (4.0+) AppDynamics controller in SAAS or On Premise and a license provisioned for Python agents.
+
 ## Installation
 
 Python 2.6 or 2.7 are required. MacOS X and recent Linux distributions should have these preinstalled. Older Linux distributions (like CentOS 5) may come with a version of Python is too old, but you should be able to easily find packages for Python 2.7.
@@ -59,7 +61,7 @@ pip install -U pip
 Then install the agent into your virtualenv:
 
 ```
-env/bin/pip install /path/to/agent/appdynamics-4.0.0.0-py2-none-any.whl
+env/bin/pip install --pre appdynamics
 ```
 
 Run the agent with the `pyagent` command and a configuration file (there's a sample configuration file included in this repository, `appdynamics.cfg`):
