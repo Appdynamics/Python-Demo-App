@@ -25,6 +25,7 @@ def pgsql_pool_returner(cxn):
 
 
 def mysql():
+    return closing(mysql_connector.MySQLConnection(**config.MYSQL_DSN))
     global MYSQL_POOL
 
     if MYSQL_POOL is None:
