@@ -15,5 +15,5 @@ mysql -uroot -e "FLUSH PRIVILEGES"
 
 # Restart MySQL
 service mysql restart
+tail -f /var/log/mysql/error.log
 
-exit 0

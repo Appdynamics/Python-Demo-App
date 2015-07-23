@@ -2,6 +2,10 @@ FROM appdynamics/python-base
 
 MAINTAINER Jeff Morgan (jeff.morgan@appdynamics.com)
 
+ADD startup.sh /usr/local/bin/startup.sh
+RUN chown postgres /usr/local/bin/startup.sh
+RUN chmod 777 /usr/local/bin/startup.sh
+
 ################## BEGIN INSTALLATION ######################
 
 # Run the rest of the commands as the ``postgres`` user created by the ``postgres-9.3`` package when it was ``apt-get installed``
@@ -28,4 +32,4 @@ RUN echo "listen_addresses='*'" >> /etc/postgresql/9.3/main/postgresql.conf
 EXPOSE 5432
 EXPOSE 22
 
-CMD service postgresql start && tail -F /var/log/postgresql/postgresql-9.3-main.log
+CMD /usr/local/bin/startup.sh

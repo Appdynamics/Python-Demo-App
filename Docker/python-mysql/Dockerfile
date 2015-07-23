@@ -18,4 +18,4 @@ RUN chown -R root.root /root/
 EXPOSE 3306
 EXPOSE 22
 
-CMD /root/startup.sh && tail -F /var/log/mysql/error.log
+CMD /root/startup.sh

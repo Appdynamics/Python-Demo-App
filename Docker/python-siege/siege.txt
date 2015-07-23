@@ -1,5 +1,5 @@
 URL=python_app:9000
-EXTERNAL=
+EXTERNAL=http://www.google.com
 INSTRUMENTED0=http://localhost:9000/wave/first
 INSTRUMENTED1=http://localhost:9000/error/sometimes
 $(URL)/wave/0
