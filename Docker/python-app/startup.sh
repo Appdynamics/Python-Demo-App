@@ -8,6 +8,9 @@ source /appd/env.sh && sed -i "/^port/c\port = ${APPD_PORT}" /appd/Python-Demo-A
 source /appd/env.sh && sed -i "/^ssl/c\ssl = ${SSL}" /appd/Python-Demo-App/appdynamics.cfg
 source /appd/env.sh && sed -i "/^account/c\account = ${ACCOUNT_NAME}" /appd/Python-Demo-App/appdynamics.cfg
 source /appd/env.sh && sed -i "/^accesskey/c\accesskey = ${ACCESS_KEY}" /appd/Python-Demo-App/appdynamics.cfg
+source /appd/env.sh && sed -i "/^app/c\app = ${APP_NAME}" /appd/Python-Demo-App/appdynamics.cfg
+source /appd/env.sh && sed -i "/^tier/c\tier = ${TIER_NAME}" /appd/Python-Demo-App/appdynamics.cfg
+source /appd/env.sh && sed -i "/^node/c\node = ${NODE_NAME}" /appd/Python-Demo-App/appdynamics.cfg
 sed -i 's/localhost/python_mysql/g' /appd/Python-Demo-App/demo/config.py
 sed -i 's/127.0.0.1/python_postgres/g' /appd/Python-Demo-App/demo/config.py
 chown -R appdynamics.appdynamics /appd
@@ -20,4 +23,3 @@ su - appdynamics -c "/appd/Python-Demo-App/env/bin/pip install -r /appd/Python-D
 
 # Start services
 su - appdynamics -c "source /appd/Python-Demo-App/start.sh"
-

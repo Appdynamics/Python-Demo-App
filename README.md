@@ -78,6 +78,16 @@ Install siege through your package manager (`yum install siege` on Red Hat, `apt
 siege -d 1 -f siege.txt
 ```
 
+## Run with Docker
+
+In Docker directory, add configuration value to CONTR_HOST, ACCOUNT_NAME, ACCESS_KEY, APP_NAME, TIER_NAME, NODE_NAME in startPython.sh.
+
+Run docker with
+
+```
+./startPython.sh
+```
+
 ## HTTP Exit Call / Distributed Correlation Testing
 
 The AppDynamics Python agent supports distributed correlation across tiers. The agent supports both being the originating tier and the continuing tier. To demonstrate this and test it out, you can use the `/http` endpoint to cause an HTTP exit call with a correlation header. This is useful for testing cross-tier correlation (as of 4.0.0, the Python agent does not support cross-app correlation). For example, if you have a .NET instrumented tier at 192.168.0.1, you can cause correlation by going to `http://127.0.0.1/http?url=http://192.168.0.1/`.

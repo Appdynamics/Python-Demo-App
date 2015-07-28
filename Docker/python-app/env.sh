@@ -9,7 +9,19 @@ if [ -z "${APPD_PORT}" ]; then
 fi
 
 if [ -z "${SSL}" ]; then
-        export SSL="ssl should be off";
+        export SSL="off";
+fi
+
+if [ -z "${APP_NAME}" ]; then
+        export APP_NAME="Python-App";
+fi
+
+if [ -z "${TIER_NAME}" ]; then
+        export TIER_NAME="Python-Tier";
+fi
+
+if [ -z "${NODE_NAME}" ]; then
+        export NODE_NAME="Python-Node";
 fi
 
 if [ -z "${ACCOUNT_NAME}" ]; then
