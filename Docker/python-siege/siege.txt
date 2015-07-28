@@ -2,9 +2,6 @@ URL=python_app:9000
 EXTERNAL=http://www.google.com
 INSTRUMENTED0=http://localhost:9000/wave/first
 INSTRUMENTED1=http://localhost:9000/error/sometimes
-CATALOG=
-SURVEY=
-PROCUREMENT=
 $(URL)/wave/0
 $(URL)/wave/1
 $(URL)/wave/2
@@ -21,7 +18,4 @@ $(URL)/query/pgsql
 $(URL)/http?url=$(EXTERNAL)
 $(URL)/http?url=$(INSTRUMENTED0)
 $(URL)/http?url=$(INSTRUMENTED1)
-$(URL)/http?url=$(CATALOG)
-$(URL)/http?url=$(SURVEY)
-$(URL)/http?url=$(PROCUREMENT)
 
