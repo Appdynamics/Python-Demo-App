@@ -7,7 +7,6 @@ MAINTAINER Jeff Morgan (jeff.morgan@appdynamics.com)
 # Install app
 RUN git clone https://github.com/Appdynamics/Python-Demo-App.git /appd/Python-Demo-App
 ADD /appdynamics.cfg /appd/Python-Demo-App/
-RUN chown -R appdynamics.appdynamics /appd
 
 # Add startup script
 ADD /startup.sh /appd/
@@ -16,7 +15,6 @@ ADD /env.sh /appd/
 RUN chmod 777 /appd/env.sh
 ADD /start.sh /appd/Python-Demo-App/
 RUN chmod 777 /appd/Python-Demo-App/start.sh
-RUN chown -R appdynamics.appdynamics /appd
 
 ##################### INSTALLATION END #####################
 

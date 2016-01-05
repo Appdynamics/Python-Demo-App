@@ -34,7 +34,6 @@ RUN apt-get -y install mysql-server
 RUN apt-get -y install python-mysqldb
 RUN apt-get -y install siege
 ADD /distribute_setup.py /tmp/
-RUN chown -R appdynamics.appdynamics /appd
 RUN python /tmp/distribute_setup.py
 RUN easy_install pip
 RUN pip install virtualenv
