@@ -20,6 +20,8 @@ source /appd/Python-Demo-App/env/bin/activate
 /appd/Python-Demo-App/env/bin/pip install --pre appdynamics
 #/appd/Python-Demo-App/env/bin/pip install --allow-external mysql-connector-python -r /appd/Python-Demo-App/requirements.txt
 /appd/Python-Demo-App/env/bin/pip install -r /appd/Python-Demo-App/requirements.txt
+cd /appd/Python-Demo-App/env && git clone https://github.com/mysql/mysql-connector-python.git
+cd /appd/Python-Demo-App/env/mysql-connector-python && /appd/Python-Demo-App/env/bin/python ./setup.py build && /appd/Python-Demo-App/env/bin/python ./setup.py install
 
 # Start services
 source /appd/Python-Demo-App/start.sh
