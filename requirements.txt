@@ -7,3 +7,4 @@ itsdangerous==0.24
 psycopg2==2.5.4
 requests==2.4.3
 wsgiref==0.1.2
+mysql-connector-python-rf==2.1.3
