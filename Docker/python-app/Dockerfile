@@ -21,4 +21,4 @@ RUN chmod 777 /appd/Python-Demo-App/start.sh
 # Expose Ports
 EXPOSE 9000
 
-CMD /appd/startup.sh
+CMD /appd/startup.sh && tail -F /var/log/dmesg
