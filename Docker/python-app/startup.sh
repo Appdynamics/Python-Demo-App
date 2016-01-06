@@ -18,7 +18,7 @@ sed -i 's/127.0.0.1/python_postgres/g' /appd/Python-Demo-App/demo/config.py
 /usr/local/bin/virtualenv /appd/Python-Demo-App/env
 source /appd/Python-Demo-App/env/bin/activate
 /appd/Python-Demo-App/env/bin/pip install --pre appdynamics
-/appd/Python-Demo-App/env/bin/pip install --allow-external mysql-connector-python -r /appd/Python-Demo-App/requirements.txt
+#/appd/Python-Demo-App/env/bin/pip install --allow-external mysql-connector-python -r /appd/Python-Demo-App/requirements.txt
 /appd/Python-Demo-App/env/bin/pip install -r /appd/Python-Demo-App/requirements.txt
 
 # Start services
